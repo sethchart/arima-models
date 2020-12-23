@@ -2,7 +2,7 @@
 
 Last week, I finished a project where I identified the five zip codes, in the city of Baltimore, where an individual would expect the highest return on investment if they bought a house, lived in it for two years and then sold it and moved away. You can check out my github repository for the project [here](https://github.com/sethchart/Baltimore-Real-Estate-Investment). I used Seasonal AutoRegressive Integrated Moving Average (SARIMA) models to forecast house prices based on historical data that I collected from Zillow.
 
-In this post I want to take a closer look at these powerful time series models and try to get some intuition for how they work. A SARIMA model is a fairly complex type of time series model that combines several ideas to provide a flexible framework for modeling time series data. I want to  focus on a few of the core ideas that make up the the simpler ARMA models that are the inspiration for SARIMA models.
+In this post I want to take a closer look at these powerful time series models and try to get some intuition for how they work. A SARIMA model is a fairly complex type of time series model that combines several ideas to provide a flexible framework for modeling time series data. I want to  focus on a few of the core ideas that make up the simpler ARMA models that are the inspiration for SARIMA models.
 
 ## What is a time series?
 
@@ -154,7 +154,7 @@ The equation describes a list of values also commonly called as *sequence*.
 
 ### Example 5
 
-Below we plot the first ten values of the Linear Recurrence Relation of order 2 with coefficients $c_1 = 1, c_2 = -\tfrac{1}{2}$, and and initial conditions $a_0 = -3$ and $a_1 = 1$. This can be written as the equation below.
+Below we plot the first ten values of the Linear Recurrence Relation of order 2 with coefficients $c_1 = 1, c_2 = -\tfrac{1}{2}$, and initial conditions $a_0 = -3$ and $a_1 = 1$. This can be written as the equation below.
 
 $$ a_n = (1)a_{n-1} + \left(-\tfrac{1}{2}\right)a_{n-2} \text{ for } n \ge 2, a_0 = -3, a_1 = 1. $$
 
@@ -171,13 +171,7 @@ plt.ylabel("Value");
 fig.savefig('images/rr_plot.png', dpi=600, bb_inches='tight')
 ```
 
-    /home/schart/anaconda3/envs/flatiron/lib/python3.6/site-packages/ipykernel_launcher.py:9: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument "bb_inches" which is no longer supported as of 3.3 and will become an error two minor releases later
-      if __name__ == '__main__':
-
-
-
-    
-![png](notebook_files/notebook_15_1.png)
+![png](images/rr_plot.png)
     
 
 
@@ -229,15 +223,7 @@ plt.legend(['Without Randomness', 'With Randomness']);
 fig.savefig('images/ar_plot.png', dpi=600, bb_inches='tight')
 ```
 
-    /home/schart/anaconda3/envs/flatiron/lib/python3.6/site-packages/ipykernel_launcher.py:11: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument "bb_inches" which is no longer supported as of 3.3 and will become an error two minor releases later
-      # This is added back by InteractiveShellApp.init_path()
-
-
-
-    
-![png](notebook_files/notebook_19_1.png)
-    
-
+![png](images/ar_plot.png)
 
 We can see that the behavior of the sequence with added randomness is similar to the original sequence, but it now has a mechanism that incorporates the unknown external factors. 
 
@@ -340,15 +326,7 @@ plt.legend(['Without Randomness', 'AR Model', 'ARMA Model']);
 fig.savefig('images/arma_plot.png', dpi=600, bb_inches='tight')
 ```
 
-    /home/schart/anaconda3/envs/flatiron/lib/python3.6/site-packages/ipykernel_launcher.py:16: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument "bb_inches" which is no longer supported as of 3.3 and will become an error two minor releases later
-      app.launch_new_instance()
-
-
-
-    
-![png](notebook_files/notebook_27_1.png)
-    
-
+![png](images/arma_plot.png)
 
 # Conclusion
 

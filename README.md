@@ -163,16 +163,21 @@ $$ a_n = (1)a_{n-1} + \left(-\tfrac{1}{2}\right)a_{n-2} \text{ for } n \ge 2, a_
 from matplotlib import pyplot as plt
 plt.style.use('ggplot')
 seq = compute_sequence(coefficients=[1, -1/2], initial_conditions=[-3, 1], n_values=10)
-plt.figure(figsize=(12,7));
+fig = plt.figure(figsize=(12,7));
 plt.plot(seq, '.');
 plt.title("Ten values from the sequence $a$.");
 plt.xlabel("Index");
 plt.ylabel("Value");
+fig.savefig('images/rr_plot.png', dpi=600, bb_inches='tight')
 ```
+
+    /home/schart/anaconda3/envs/flatiron/lib/python3.6/site-packages/ipykernel_launcher.py:9: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument "bb_inches" which is no longer supported as of 3.3 and will become an error two minor releases later
+      if __name__ == '__main__':
+
 
 
     
-![png](notebook_files/notebook_15_0.png)
+![png](notebook_files/notebook_15_1.png)
     
 
 
@@ -212,20 +217,25 @@ def compute_ar_sequence(coefficients, initial_conditions, sigma, n_values):
 
 ```python
 from matplotlib import pyplot as plt
-plt.style.use('ggplot')
+fig = plt.style.use('ggplot')
 ar_seq = compute_ar_sequence(coefficients=[1, -1/2], initial_conditions=[-3, 1], sigma=0.2, n_values=10)
-plt.figure(figsize=(12,7));
+fig = plt.figure(figsize=(12,7));
 plt.plot(seq, '.');
 plt.plot(ar_seq, '.');
 plt.title("Ten values from the sequence $a$.");
 plt.xlabel("Index");
 plt.ylabel("Value");
 plt.legend(['Without Randomness', 'With Randomness']);
+fig.savefig('images/ar_plot.png', dpi=600, bb_inches='tight')
 ```
+
+    /home/schart/anaconda3/envs/flatiron/lib/python3.6/site-packages/ipykernel_launcher.py:11: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument "bb_inches" which is no longer supported as of 3.3 and will become an error two minor releases later
+      # This is added back by InteractiveShellApp.init_path()
+
 
 
     
-![png](notebook_files/notebook_19_0.png)
+![png](notebook_files/notebook_19_1.png)
     
 
 
@@ -319,7 +329,7 @@ arma_seq = compute_arma_sequence(rr_coefficients=[1, -1/2],
                                  initial_conditions=[-3, 1], 
                                  sigma=0.2, 
                                  n_values=10)
-plt.figure(figsize=(12,7));
+fig = plt.figure(figsize=(12,7));
 plt.plot(seq, '.');
 plt.plot(ar_seq, '.');
 plt.plot(arma_seq, '.');
@@ -327,11 +337,16 @@ plt.title("Ten values from the sequence $a$.");
 plt.xlabel("Index");
 plt.ylabel("Value");
 plt.legend(['Without Randomness', 'AR Model', 'ARMA Model']);
+fig.savefig('images/arma_plot.png', dpi=600, bb_inches='tight')
 ```
+
+    /home/schart/anaconda3/envs/flatiron/lib/python3.6/site-packages/ipykernel_launcher.py:16: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument "bb_inches" which is no longer supported as of 3.3 and will become an error two minor releases later
+      app.launch_new_instance()
+
 
 
     
-![png](notebook_files/notebook_27_0.png)
+![png](notebook_files/notebook_27_1.png)
     
 
 
